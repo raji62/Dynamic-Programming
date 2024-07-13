@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        long res[]=new long[1000000+3];
+        res[0]=1;
+        long M = 1000000007;
+        for(int i=1;i<res.length;i++){
+            res[i]=((long)i%M*res[i-1]%M)%M;
+        }
+        while(t-->0){
+        int num=sc.nextInt();
+        System.out.println(res[num]);
+        }
+    }
+}
