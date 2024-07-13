@@ -1,0 +1,23 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        int M=1000000007;
+            int dp[][]=new int[2000][2000];
+             for (int i = 0; i <2000; i++) {
+                    dp[i][0] = dp[i][i]=1;
+            }
+             for(int i=0;i<2000;i++){
+                 for(int j=1;j<=i;j++){
+                    dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j])%M;
+            }
+        }
+         while(t-->0){
+            int n=sc.nextInt();
+            int r=sc.nextInt();
+            System.out.println(dp[n][r]);
+        }
+    }
+}
+
