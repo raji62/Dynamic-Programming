@@ -1,0 +1,30 @@
+//java code
+import java.util.*;
+import java.io.*;
+public class Main
+{
+    public static long p(long a,long b){
+        long M=1000000007;
+        long r=1;
+        while(b>0){
+            if(b%2==1){
+                r=(r*a)%M;
+        }
+        a=(a*a)%M;
+        b=b/2;
+        }
+        return r;
+    }
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        long M=1000000007;
+        int t=sc.nextInt();
+        while(t-->0){
+            int m=sc.nextInt();
+            int n=sc.nextInt();
+            long ans=(p(2,m+n)-p(2,n)+M)%M;
+            System.out.println(ans);
+            
+        }
+    }
+}
